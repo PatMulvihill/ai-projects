@@ -1,0 +1,14 @@
+#Our java paths for the java8 version
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_91
+export PATH=$PATH:$JAVA_HOME/bin
+
+#Our project specific tasks
+alias astar="cd ~/workspace/astar/src"
+alias build="ant -buildfile ~/workspace/astar/src/build.xml all"
+
+#helper function for running
+function __Run(){
+ant run -buildfile ~/workspace/astar/src/build.xml -Darg0=$1 -Darg1=$2 -Darg2=$3 -Darg3=$4
+}
+
+alias run="__Run"
